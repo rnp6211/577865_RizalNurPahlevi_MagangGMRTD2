@@ -1,0 +1,24 @@
+1. Analisis Konfigurasi A (5, 0, 0)
+RPM stagnan di sekitar 138 dan tidak dapat mencapai 150RPM disebabkan karena ketiadaan integral
+Tanpa akumulasi eror, apabila sistem sudah mendekati setpoint, proporsional tidak dapat mengkoreksi
+lagi dikarenakan nilai output yang terlalu kecil. Peristiwa ini disebut steady-state error
+Menambah nilai proporsional tentunya tidak cukup karena dapat mengakibatkan eror yang terlalu over
+
+2. Analisis Konfigurasi B (5, 8, 0)
+RPM sempat melonjak terlalu tajam hingga mencapai 195 RPM dikarenakan akumulasi eror yang terlalu tinggi
+sehingga mengakibatkan output untuk mengkoreksi menjadi tinggi pula.
+Akumulasi galat terjadi apabila eror yang diakumulasikan menjadi terlalu banyak sehingga output koreksi
+yang dihasilkan menjadi terpacu terhadap akumulasi.
+
+3. Analisis Konfigurasi C (5, 8, 2.5)
+Derivatif berfungsi untuk mengukur seberapa cepat perubahan kesalahan yang dilakukan.
+Dengan derivatif, sistem dapat memprediksi kesalahan di masa depan dan meredam lonjakan atau osilasi
+agar sistem tidak terlalu over dalam mengoreksi kesalahan.
+
+4. Kondisi Khusus (Troubleshooting)
+Apabila roda ditahan sehingga menjadi diam padahal sistem berusaha untuk menggerakkannya, integrasi
+akan terus mengakumulasi eror tersebut sehingga dapat mengakibatkan overshoot dan menyebabkan sistem
+untuk menggerakkan motor terlalu cepat pada saat halangan tersebut dilepas.
+Untuk menghindari hal tersebut, programmer dapat mengimplementasikan sebuah threshold dimana akumulasi
+dapat diabaikan terlebih dahulu apabila current value yang didapatkan tidak berubah sama sekali dalam
+beberapa waktu meskipun output koreksi sudah dinaikkan beberapa kali.
