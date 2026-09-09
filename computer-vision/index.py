@@ -10,6 +10,10 @@ if not cap.isOpened():
 model = YOLO("computer-vision/yolov8n.pt")
 print(model.names)
 
+classes_target = [0, 67, 73]
+#for i in range(len(model.names)):
+#   classes_target.append(i)
+
 while True:
     ret, frame = cap.read()
 
@@ -19,7 +23,7 @@ while True:
 
     output = frame.copy()
 
-    results = model.predict(source=frame)
+    results = model.predict(source=frame, classes=classes_target)
 
     if results is not None:
         result = results[0]
@@ -27,7 +31,7 @@ while True:
             xyxy = result.boxes.xyxy[i].round().int().tolist()
             cv2.rectangle(output, (xyxy[0], xyxy[1]), (xyxy[2], xyxy[3]), (0, 255, 0), 2)
 
-            name = result.names[i]
+            name = result.names[result.boxes[i].cls.item()]
             confidence = result.boxes.conf.tolist()
             text = "[" + str(round(confidence[i]*100)) + "%] " + name
 
