@@ -8,7 +8,6 @@
 - [x] Tugas Computer Vision
     - Hasil Pengerjaan terdapat pada folder `computer-vision`
     - Menggunakan model `yolov8n.pt`
-    - Masalah: Hasil hanya dapat mengklasifikasikan sebagai person/car/bicycle (?)
 - [x] Tugas ROS2
     - Hasil Pengerjaan terdapat pada folder `ros2`
 - [x] Tugas PID
