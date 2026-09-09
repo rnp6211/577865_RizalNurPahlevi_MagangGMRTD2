@@ -1,8 +1,8 @@
 # Penugasan GMRT Day 2
 
 ## Identitas
-Nama: Rizal Nur Pahlevi
-NIM: 26/577865/TK/65742
+- Nama: Rizal Nur Pahlevi
+- NIM: 26/577865/TK/65742
 
 ## Tugas
 - [x] Tugas Computer Vision
